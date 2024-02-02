@@ -1,11 +1,16 @@
 .logo {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  // display: flex;
   align-items: center;
-  padding: 13px 0;
 
-  &:hover,
-  &:focus-visible {
+  &:hover {
     opacity: 0.8;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
   }
 
   &:active {
@@ -13,11 +18,7 @@
   }
 
   @include viewport-tablet {
-    padding: 25px 0;
-  }
-
-  @include viewport-desktop {
-    padding: 55px 0;
+    grid-template-columns: 70px 1fr;
   }
 }
 
@@ -34,9 +35,10 @@
 }
 
 .logo__text {
+  justify-self: center;
+
   @include viewport-desktop {
     width: 118px;
     height: 21px;
   }
 }
-
